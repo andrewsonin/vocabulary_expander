@@ -22,7 +22,7 @@ class Expander:
 
             info = re.match(
                 r'^(?P<word>[\w \(\)\.,\-]*) -- (?P<transl>[\w; \(\)\.,\-]+[^0-9 /,])'
-                r' */*/* *(?P<rep>\d)*,* *(?P<last_time>\d+)*$',
+                r' */*/* *(?P<rep>\d+)*,* *(?P<last_time>\d+)*$',
                 line.strip())
 
             # Sample is like this:
