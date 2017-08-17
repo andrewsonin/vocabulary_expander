@@ -3,7 +3,7 @@ from exit import program_exit
 
 
 def session(file):
-    print('Welcome to Vocabulary Expander!\n'
+    print('\nWelcome to Vocabulary Expander!\n'
           '\nWhich mod do you prefer?\n'
           'Just write one of the given names:\n'
           'Smart / Simple\n'
@@ -31,7 +31,7 @@ def session(file):
     expander.teaching(w_num)
 
 
-def safety_open(file_name):
+def safe_open(file_name):
     file = open(file_name, 'r', encoding='utf8')
     temp = open('temp_' + file_name, 'w', encoding='utf8')
     temp.write(file.read())

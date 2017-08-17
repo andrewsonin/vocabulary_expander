@@ -105,8 +105,7 @@ class Expander:
                         print('Sorry, returning is not possible.')
                     break
                 if a == '0':
-                    print('Program exit…')
-                    exit(1)
+                    program_exit()
                 print('Try again.')
 
     def testing(self, w_num):

@@ -1,3 +1,3 @@
-from script import session, safety_open
+from script import session, safe_open
 
-session(safety_open('dict.txt'))
+session(safe_open('dict.txt'))
