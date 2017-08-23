@@ -90,6 +90,8 @@ class Expander:
             if not init:
                 print('Press "y" to continue. Other to not ("n", for example). Press 0 to exit.')
                 cont = input()
+            else:
+                init = False
             if cont == 'y':
                 self.memorizing(w_num)
                 self.testing(w_num)
@@ -97,7 +99,6 @@ class Expander:
                 program_exit()
             else:
                 break
-            init = False
 
     def memorizing(self, w_num):
         i = 0
