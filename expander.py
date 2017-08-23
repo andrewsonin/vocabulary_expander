@@ -97,6 +97,7 @@ class Expander:
                 program_exit()
             else:
                 break
+            init = False
 
     def memorizing(self, w_num):
         i = 0
