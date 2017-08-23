@@ -83,9 +83,13 @@ class Expander:
             if w_num <= 0:
                 program_exit()
 
+        init = True
+        cont = 'y'
+
         while True:
-            print('Press "y" to continue. Other to not ("n", for example). Press 0 to exit.')
-            cont = input()
+            if not init:
+                print('Press "y" to continue. Other to not ("n", for example). Press 0 to exit.')
+                cont = input()
             if cont == 'y':
                 self.memorizing(w_num)
                 self.testing(w_num)
