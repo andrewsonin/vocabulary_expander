@@ -21,7 +21,7 @@ class Expander:
             # needed for dictionary building
 
             info = re.match(
-                r'^(?P<word>[\w \(\)\.,\-]*) -- (?P<transl>[\w; \(\)\.,\-]+[^0-9 /,])'
+                r'^(?P<word>[\w \(\)\.,\-]*) -- (?P<transl>[\w; \(\)\.,\-*|\?]+[^0-9 /,])'
                 r' */*/* *(?P<rep>\d+)*,* *(?P<last_time>\d+)*$',
                 line.strip())
 
@@ -46,6 +46,8 @@ class Expander:
             self.dict.append([info.group('word'), translation,
                               int(info.group('rep')) if info.group('rep') is not None else 0,
                               int(info.group('last_time')) if info.group('last_time') is not None else 0])
+
+            # print(info.group('word'), translation, info.group('rep'), info.group('last_time'), sep='\n')
 
         if len(self.dict) == 0:
             print('Reading did not completed. Error occurred: Dictionary is empty\n'
@@ -81,8 +83,16 @@ class Expander:
             if w_num <= 0:
                 program_exit()
 
-        self.memorizing(w_num)
-        self.testing(w_num)
+        while True:
+            print('Press "y" to continue. Other to not ("n", for example). Press 0 to exit.')
+            cont = input()
+            if cont == 'y':
+                self.memorizing(w_num)
+                self.testing(w_num)
+            elif cont == '0':
+                program_exit()
+            else:
+                break
 
     def memorizing(self, w_num):
         i = 0
@@ -109,20 +119,12 @@ class Expander:
                 print('Try again.')
 
     def testing(self, w_num):
-        while True:
-            print('Press "y" to continue. Other to not ("n", for example). Press 0 to exit.')
-            cont = input()
-            if cont == 'y':
-                results = [True for i in range(w_num)]
-                self.__test1(w_num, results)
-                self.__test2(w_num, results)
-                self.__test3(w_num, results)
-                self.__dict_reinit(w_num, results)
-                self.rewrite()
-            elif cont == '0':
-                program_exit()
-            else:
-                break
+        results = [True for i in range(w_num)]
+        self.__test1(w_num, results)
+        self.__test2(w_num, results)
+        self.__test3(w_num, results)
+        self.__dict_reinit(w_num, results)
+        self.rewrite()
 
     def __test1(self, w_num, results):
         print('\nTest 1: Choose appropriate translation of the foreign word.')
