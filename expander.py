@@ -135,8 +135,7 @@ class Expander:
         print('\nTest 1: Choose appropriate translation of the foreign word.')
         not_used = [i for i in range(w_num)]
         shuffle(not_used)
-        while not_used:
-            cur = not_used.pop()
+        for cur in not_used:
             answers = ['; '.join(self.dict[randint(0, len(self.dict) - 1)][1]) for i in range(5)]
 
             right_answer = '; '.join(self.dict[cur][1])
@@ -169,8 +168,7 @@ class Expander:
         print('\nTest 2: Choose appropriate translation of the native word.')
         not_used = [i for i in range(w_num)]
         shuffle(not_used)
-        while not_used:
-            cur = not_used.pop()
+        for cur in not_used:
             answers = [self.dict[randint(0, len(self.dict) - 1)][0] for i in range(5)]
 
             right_answer = self.dict[cur][0]
@@ -203,8 +201,7 @@ class Expander:
         print('\nTest 3: Translate native word.')
         not_used = [i for i in range(w_num)]
         shuffle(not_used)
-        while not_used:
-            cur = not_used.pop()
+        for cur in not_used:
             answers = [self.dict[randint(0, len(self.dict) - 1)][0] for i in range(5)]
 
             right_answer = self.dict[cur][0]
