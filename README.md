@@ -3,8 +3,8 @@ Vocabulary Expander is a program useful in case if you want to learn a lot of fo
 
 How to use it:
 1) download this directory
-2) Create your own dictionary in the directory of program under the name 'dict.txt'.
-   Write there, strictly adhering to the template of each line that implemented in dict.txt (and use only utf-8 encoding):
+2) Create your own dictionary in the directory of program under the name 'dict.txt' or modify existing.
+   Write there, strictly adhering to the template of each line that implemented in default 'dict.txt' (and use only utf-8 encoding):
    <foreign_wod> -- <native_lang_word>
    or
    <foreign_wod> -- <native_lang_word> // <number_of_rehearsals>, <time_of_the_latest_rehearsal (integer)>
