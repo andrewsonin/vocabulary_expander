@@ -125,7 +125,7 @@ class Expander:
                 print('Try again.')
 
     def testing(self, w_num):
-        results = [True for i in range(w_num)]
+        results = [True] * w_num
         self.__test1(w_num, results)
         self.__test2(w_num, results)
         self.__test3(w_num, results)

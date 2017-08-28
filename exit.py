@@ -1,3 +1,3 @@
 def program_exit():
-    print('Program exit…')
-    exit(1)
+    print('Program exit by requirement…')
+    exit(2)
